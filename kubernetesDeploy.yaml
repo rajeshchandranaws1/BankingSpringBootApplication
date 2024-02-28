@@ -1,7 +1,5 @@
 - name : Deploy Pods on Docker Container
   hosts: kubernetes
-  connection: local
-  gather_facts: false
   tasks : 
   - name: Remove Existing Container
     command: "kubectl delete deployment {{ containerName }}"
