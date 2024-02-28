@@ -4,6 +4,8 @@ node{
     
     stage('Prepare Environment'){
         echo 'Initialize Environment'
+        mavenHome = tool name: 'maven' , type: 'maven'
+        mavenCMD = "${mavenHome}/bin/mvn"
         tag="3.0"
 	withCredentials([usernamePassword(credentialsId: 'DOCKER_CRED', usernameVariable: 'dockerUser', passwordVariable: 'dockerPassword')]) {
 		dockerHubUser="$dockerUser"
@@ -23,7 +25,7 @@ node{
     }
     
     stage('Maven Build'){
-        sh "mvn clean package"        
+        sh "${mavenCMD} clean package"        
     }
     
     stage('Docker Image Build'){
