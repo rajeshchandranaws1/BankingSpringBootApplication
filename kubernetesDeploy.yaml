@@ -1,5 +1,5 @@
 - name : Deploy Pods on Docker Container
-  hosts: localhost
+  hosts: kubernetes
   connection: local
   tasks : 
   - name: Remove Existing Container
