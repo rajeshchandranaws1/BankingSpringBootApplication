@@ -1,9 +1,5 @@
 node{
 
-	environment {
-          PATH="/opt/apache-maven-3.9.6/bin:$PATH"
-     }
-
     
     def tag, dockerHubUser, containerName, httpPort = ""
     
