@@ -10,7 +10,7 @@ node{
         }
 	containerName="bankingapp"
 	httpPort="8989"
-        PATH=”/opt/apache-maven-3.9.6/bin:$PATH”
+        PATH="/opt/apache-maven-3.9.6/bin:$PATH"
 
     }
     
