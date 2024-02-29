@@ -1,10 +1,6 @@
 node{
 
-    tools { 
-      maven 'MAVEN_HOME' 
-      jdk 'JAVA_HOME' 
-    }
-	
+
     def tag, dockerHubUser, containerName, httpPort = ""
     
     stage('Prepare Environment'){
