@@ -26,7 +26,7 @@ node{
     }
     
     stage('Maven Build'){
-        sh "mvn1 clean install"        
+        sh "mvn clean install"        
     }
     
     stage('Docker Image Build'){
