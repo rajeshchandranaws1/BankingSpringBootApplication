@@ -44,10 +44,7 @@ node{
     }    
 	
 	stage('Ansible Playbook Execution'){
-		sshagent(credentials: ['ssh-agent'], ignoreMissing: true) {
-                   #sh "ansible-playbook -i inventory.yaml kubernetesDeploy.yaml -e httpPort=$httpPort -e containerName=$containerName -e dockerImageTag=$dockerHubUser/$containerName:$tag"
-		   ansible localhost -m ping
-               }		
+	        sh "ansible localhost -m ping"
 	}
 }
 
