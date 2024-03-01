@@ -43,8 +43,12 @@ node{
         } 
     }    
 	
+	stage('Ansible Ad-hoc Execution'){
+	        sh "ansible localhost -m ping"		
+	}
+	
 	stage('Ansible Playbook Execution'){
-	        sh "ansible localhost -m ping"
+		sh "ansible-playbook -i inventory.yaml kubernetesDeploy.yaml -e httpPort=$httpPort -e containerName=$containerName -e dockerImageTag=$dockerHubUser/$containerName:$tag"
 	}
 }
 
