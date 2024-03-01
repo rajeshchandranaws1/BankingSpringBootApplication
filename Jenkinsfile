@@ -48,7 +48,7 @@ node{
 	}
 	
 	stage('Ansible Playbook Execution'){
-		ansiblePlaybook become: true, credentialsId: 'ssh-agent', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/var/lib/jenkins/workspace/orbit-bank/inventory.yaml', playbook: '/var/lib/jenkins/workspace/orbit-bank/kubernetesDeploy.yaml', vaultTmpPath: ''
+		ansiblePlaybook credentialsId: 'ssh-agent', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/var/lib/jenkins/workspace/orbit-bank/inventory.yaml', playbook: '/var/lib/jenkins/workspace/orbit-bank/kubernetesDeploy.yaml', vaultTmpPath: ''
 	}
 }
 
