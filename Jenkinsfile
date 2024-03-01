@@ -48,7 +48,6 @@ node{
 	}
 	
 	stage('Ansible Playbook Execution'){
-		#sh "ansible-playbook -i inventory2.yaml kubernetesDeploy.yaml -e httpPort=$httpPort -e containerName=$containerName -e dockerImageTag=$dockerHubUser/$containerName:$tag"
 		ansiblePlaybook become: true, credentialsId: 'ssh-agent', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/var/lib/jenkins/workspace/orbit-bank/inventory2.yaml', playbook: '/var/lib/jenkins/workspace/orbit-bank/kubernetesDeploy.yaml', vaultTmpPath: ''
 	}
 }
